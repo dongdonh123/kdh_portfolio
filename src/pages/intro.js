@@ -16,7 +16,8 @@ function Intro() {
           zIndex: -1,
         }}
       ></video> */}
-      <div className="content">Intro</div>
+      <div className="content">Intro
+      <p>0.1version</p></div>
     </div>
   );
 }
