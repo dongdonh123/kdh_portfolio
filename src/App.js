@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import scroll from './common/scroll';
+import 'bootstrap/dist/css/bootstrap.min.css'; // 부트스트랩 
+
+import Intro from './pages/intro';
+import Profile from './pages/profile';
+import Project from './pages/project';
+import Outro from './pages/outro';
+import Admin from './pages/admin';
+import TabsExample from './common/navigation'
 
 function App() {
+
+
+  useEffect(() => {
+    scroll();
+    return () => {
+    };
+  }, []);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="full">
+      <div className="navi">
+        <TabsExample />
+      </div>
+      <Intro></Intro>
+      <Profile></Profile>
+      <Project></Project>
+      <Outro></Outro>
+      <Admin></Admin> 
     </div>
   );
 }
